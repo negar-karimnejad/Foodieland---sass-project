@@ -1,0 +1,336 @@
+@import "variables";
+@import "mixins";
+
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+// Start Reset CSS
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+// Finish Reset CSS
+
+body {
+  background-color: $whiteColor;
+  color: $darkColor;
+  font-family: Inter;
+  overflow: hidden;
+}
+
+header {
+  @include flexCenter();
+  @include maxWidthQuery(1024px) {
+    padding: 20px;
+  }
+  padding: 30px 5rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.185);
+  h1 {
+    font-family: Lobster;
+    font-weight: 500;
+    font-size: 2rem;
+    span {
+      color: orangered;
+    }
+    @include maxWidthQuery(1024px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  ul {
+    @include flexCenter(50px);
+    @include maxWidthQuery(1024px) {
+      display: none;
+    }
+  }
+
+  a {
+    color: $darkColor;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+    border-bottom: none;
+    white-space: nowrap;
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+      color: #00bde7;
+    }
+  }
+
+  .socials {
+    @include flexCenter(30px);
+    @include maxWidthQuery(1024px) {
+      display: none;
+    }
+  }
+  span {
+    cursor: pointer;
+    @include minWidthQuery(1024px) {
+      display: none;
+    }
+  }
+}
+
+.toggle_menu {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $primaryColor;
+  z-index: 100;
+  transform: translateX(-100%);
+  transition: all 0.4s ease;
+  &.menu-active {
+    transform: translateX(0);
+  }
+  ul {
+    @extend header;
+    flex-direction: column;
+    gap: 50px;
+    align-items: start;
+    padding: 7rem 4rem;
+    a {
+      color: $darkColor;
+      font-size: 1.3rem;
+    }
+  }
+
+  span {
+    position: absolute;
+    right: 22px;
+    top: 12px;
+    font-size: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .socials_container {
+    padding-right: 20px;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.hero {
+  background-color: $primaryColor;
+  margin: 30px;
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
+  .hero_image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .hero_content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 30px;
+    padding: 3rem;
+    button {
+      @include styledButton($whiteColor, $darkColor, none, 5px 15px, 50px);
+    }
+    img {
+      height: 20px;
+      width: 20px;
+      object-fit: fill;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 45px;
+    }
+    p {
+      color: $grayColor;
+      line-height: 22px;
+      font-size: 14px;
+    }
+    .buttons_container {
+      display: flex;
+      gap: 20px;
+      button {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+    }
+    .recipes_info {
+      @include flexCenter;
+      width: 100%;
+      margin-top: 30px;
+      gap: 10px;
+      .chef_info {
+        @include flexCenter(10px);
+      }
+      img {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+      }
+      .name {
+        font-size: 13px;
+        color: $darkColor;
+        font-weight: 900;
+      }
+      .date {
+        font-size: 13px;
+        color: $grayColor;
+      }
+      button {
+        @include styledButton(
+          $darkColor,
+          $whiteColor,
+          1px solid $darkColor,
+          12px 20px,
+          9px
+        );
+        transition: all 400ms ease-in-out;
+        font-weight: 700;
+        cursor: pointer;
+      }
+    }
+  }
+
+  @include maxWidthQuery(1024px) {
+    flex-direction: column;
+  }
+}

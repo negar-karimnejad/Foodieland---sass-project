@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+.toggle_menu ul,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+.toggle_menu ul,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  background-color: #fff;
+  color: #1f1f1f;
+  font-family: Inter;
+  overflow: hidden;
+}
+
+header, .toggle_menu ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  padding: 30px 5rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.185);
+}
+@media (max-width: 1024px) {
+  header, .toggle_menu ul {
+    padding: 20px;
+  }
+}
+header h1, .toggle_menu ul h1 {
+  font-family: Lobster;
+  font-weight: 500;
+  font-size: 2rem;
+}
+header h1 span, .toggle_menu ul h1 span {
+  color: orangered;
+}
+@media (max-width: 1024px) {
+  header h1, .toggle_menu ul h1 {
+    font-size: 1.5rem;
+  }
+}
+header ul, .toggle_menu ul ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+@media (max-width: 1024px) {
+  header ul, .toggle_menu ul ul {
+    display: none;
+  }
+}
+header a, .toggle_menu ul a {
+  color: #1f1f1f;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+  border-bottom: none;
+  white-space: nowrap;
+  transition: all 300ms ease-in-out;
+}
+header a:hover, .toggle_menu ul a:hover {
+  color: #00bde7;
+}
+header .socials, .toggle_menu ul .socials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+@media (max-width: 1024px) {
+  header .socials, .toggle_menu ul .socials {
+    display: none;
+  }
+}
+header span, .toggle_menu ul span {
+  cursor: pointer;
+}
+@media (min-width: 1024px) {
+  header span, .toggle_menu ul span {
+    display: none;
+  }
+}
+
+.toggle_menu {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e7f9fd;
+  z-index: 100;
+  transform: translateX(-100%);
+  transition: all 0.4s ease;
+}
+.toggle_menu.menu-active {
+  transform: translateX(0);
+}
+.toggle_menu ul {
+  flex-direction: column;
+  gap: 50px;
+  align-items: start;
+  padding: 7rem 4rem;
+}
+.toggle_menu ul a {
+  color: #1f1f1f;
+  font-size: 1.3rem;
+}
+.toggle_menu span {
+  position: absolute;
+  right: 22px;
+  top: 12px;
+  font-size: 2rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.toggle_menu .socials_container {
+  padding-right: 20px;
+}
+.toggle_menu .socials {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero {
+  background-color: #e7f9fd;
+  margin: 30px;
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
+}
+.hero .hero_image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.hero .hero_image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hero .hero_content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 30px;
+  padding: 3rem;
+}
+.hero .hero_content button {
+  background-color: #fff;
+  color: #1f1f1f;
+  border: none;
+  border-radius: 50px;
+  padding: 5px 15px;
+  transition: all 400ms ease-in-out;
+  font-weight: 700;
+  font-family: Inter;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.hero .hero_content button:hover {
+  background-color: #fff;
+  color: #1f1f1f;
+}
+.hero .hero_content img {
+  height: 20px;
+  width: 20px;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.hero .hero_content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 45px;
+}
+.hero .hero_content p {
+  color: #808080;
+  line-height: 22px;
+  font-size: 14px;
+}
+.hero .hero_content .buttons_container {
+  display: flex;
+  gap: 20px;
+}
+.hero .hero_content .buttons_container button {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.hero .hero_content .recipes_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  width: 100%;
+  margin-top: 30px;
+  gap: 10px;
+}
+.hero .hero_content .recipes_info .chef_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.hero .hero_content .recipes_info img {
+  width: 45px;
+  height: 45px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.hero .hero_content .recipes_info .name {
+  font-size: 13px;
+  color: #1f1f1f;
+  font-weight: 900;
+}
+.hero .hero_content .recipes_info .date {
+  font-size: 13px;
+  color: #808080;
+}
+.hero .hero_content .recipes_info button {
+  background-color: #1f1f1f;
+  color: #fff;
+  border: 1px solid #1f1f1f;
+  border-radius: 9px;
+  padding: 12px 20px;
+  transition: all 400ms ease-in-out;
+  font-weight: 700;
+  font-family: Inter;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  transition: all 400ms ease-in-out;
+  font-weight: 700;
+  cursor: pointer;
+}
+.hero .hero_content .recipes_info button:hover {
+  background-color: #fff;
+  color: #1f1f1f;
+}
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=style.css.map */

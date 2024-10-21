@@ -1,0 +1,38 @@
+@mixin flexCenter($gap: 0px) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin styledButton($bgColor, $color, $border, $padding, $borderRadius) {
+  background-color: $bgColor;
+  color: $color;
+  border: $border;
+  border-radius: $borderRadius;
+  padding: $padding;
+  transition: all 400ms ease-in-out;
+  font-weight: 700;
+  font-family: Inter;
+  @include flexCenter(10px);
+  @include hoverEffect($whiteColor, $darkColor);
+}
+
+@mixin hoverEffect($bgColor, $color) {
+  &:hover {
+    background-color: $bgColor;
+    color: $color;
+  }
+}
+
+@mixin maxWidthQuery($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin minWidthQuery($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
