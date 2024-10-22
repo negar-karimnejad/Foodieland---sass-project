@@ -1,11 +1,34 @@
+@mixin containerStyle($bgColor, $margin, $rounded, $padding: 0) {
+  background-color: $bgColor;
+  margin: $margin;
+  padding: $padding;
+  border-radius: $rounded;
+  overflow: hidden;
+  @include maxWidthQuery(1024px) {
+    margin: 20px;
+  }
+}
+
 @mixin flexCenter($gap: 0px) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+}
+@mixin categoryAbsolutePosition {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+@mixin flexBetween($gap: 0px) {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: $gap;
 }
 
-@mixin styledButton($bgColor, $color, $border, $padding, $borderRadius) {
+@mixin styledButton($bgColor, $color, $border, $padding, $borderRadius: 8px) {
   background-color: $bgColor;
   color: $color;
   border: $border;
@@ -23,6 +46,23 @@
     background-color: $bgColor;
     color: $color;
   }
+}
+
+@mixin textStyle($color, $fontWeight, $fontSize, $fontFamily: default) {
+  color: $color;
+  font-family: $fontFamily;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+}
+
+@mixin heroPsudo {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 5rem;
+  background: $primaryColor;
+  border-radius: 30px;
 }
 
 @mixin maxWidthQuery($width) {

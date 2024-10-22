@@ -136,68 +136,45 @@ body {
   background-color: $whiteColor;
   color: $darkColor;
   font-family: Inter;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 header {
-  @include flexCenter();
-  @include maxWidthQuery(1024px) {
-    padding: 20px;
-  }
+  @include flexBetween();
   padding: 30px 5rem;
   border-bottom: 1px solid rgba(128, 128, 128, 0.185);
   h1 {
-    font-family: Lobster;
-    font-weight: 500;
-    font-size: 2rem;
+    @include textStyle("", 500, 2rem, Lobster);
     span {
       color: orangered;
-    }
-    @include maxWidthQuery(1024px) {
-      font-size: 1.5rem;
     }
   }
 
   ul {
-    @include flexCenter(50px);
-    @include maxWidthQuery(1024px) {
-      display: none;
-    }
+    @include flexBetween(50px);
   }
 
   a {
-    color: $darkColor;
+    @include textStyle($darkColor, 700, 1rem);
     text-decoration: none;
-    font-weight: 700;
-    cursor: pointer;
-    border-bottom: none;
     white-space: nowrap;
     transition: all 300ms ease-in-out;
-
     &:hover {
       color: #00bde7;
     }
   }
 
   .socials {
-    @include flexCenter(30px);
-    @include maxWidthQuery(1024px) {
-      display: none;
-    }
-  }
-  span {
-    cursor: pointer;
-    @include minWidthQuery(1024px) {
-      display: none;
-    }
+    @include flexBetween(30px);
   }
 }
 
 .toggle_menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 40rem;
+  overflow: hidden;
   background-color: $primaryColor;
   z-index: 100;
   transform: translateX(-100%);
@@ -207,6 +184,7 @@ header {
   }
   ul {
     @extend header;
+    border: none;
     flex-direction: column;
     gap: 50px;
     align-items: start;
@@ -218,11 +196,10 @@ header {
   }
 
   span {
+    @include textStyle("", 500, 2rem);
     position: absolute;
     right: 22px;
     top: 12px;
-    font-size: 2rem;
-    font-weight: 500;
     cursor: pointer;
   }
 
@@ -238,99 +215,255 @@ header {
   }
 }
 
-.hero {
-  background-color: $primaryColor;
-  margin: 30px;
-  border-radius: 30px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 450px;
-  .hero_image {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    img {
+.hero_container {
+  position: relative;
+
+  .hero {
+    @include flexCenter;
+    @include containerStyle($primaryColor, 20px 70px, 30px);
+    height: 450px;
+    .hero_image {
+      @include flexCenter;
+      flex: 1;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-    }
-  }
-  .hero_content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    gap: 30px;
-    padding: 3rem;
-    button {
-      @include styledButton($whiteColor, $darkColor, none, 5px 15px, 50px);
-    }
-    img {
-      height: 20px;
-      width: 20px;
-      object-fit: fill;
-    }
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 45px;
-    }
-    p {
-      color: $grayColor;
-      line-height: 22px;
-      font-size: 14px;
-    }
-    .buttons_container {
-      display: flex;
-      gap: 20px;
-      button {
-        background-color: rgba(0, 0, 0, 0.05);
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
-    .recipes_info {
-      @include flexCenter;
-      width: 100%;
-      margin-top: 30px;
-      gap: 10px;
-      .chef_info {
-        @include flexCenter(10px);
+    .hero_content {
+      flex: 1;
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      flex-direction: column;
+      gap: 30px;
+
+      button {
+        @include styledButton($whiteColor, $darkColor, none, 5px 15px, 50px);
+        margin-left: 3rem;
       }
       img {
-        width: 45px;
-        height: 45px;
-        object-fit: contain;
+        height: 20px;
+        width: 20px;
+        object-fit: fill;
       }
-      .name {
-        font-size: 13px;
-        color: $darkColor;
-        font-weight: 900;
+      h1 {
+        @include textStyle("", 700, 2.5rem);
+        line-height: 45px;
+        margin-left: 3rem;
       }
-      .date {
-        font-size: 13px;
-        color: $grayColor;
+      p {
+        @include textStyle($grayColor, "", 14px);
+        line-height: 22px;
+        width: 80%;
+        margin-left: 3rem;
       }
-      button {
-        @include styledButton(
-          $darkColor,
-          $whiteColor,
-          1px solid $darkColor,
-          12px 20px,
-          9px
-        );
-        transition: all 400ms ease-in-out;
-        font-weight: 700;
-        cursor: pointer;
+      .buttons_container {
+        @include flexCenter(20px);
+        button {
+          background-color: rgba(0, 0, 0, 0.05);
+        }
       }
+      .recipes_info {
+        @include flexBetween(10px);
+        width: 80%;
+        margin-top: 30px;
+        margin-left: 3rem;
+
+        .chef_info {
+          @include flexBetween(10px);
+          img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+          }
+          .name {
+            @include textStyle($darkColor, 900, 13px);
+            margin-bottom: 10px;
+          }
+          .date {
+            @include textStyle($grayColor, "", 13px);
+            white-space: nowrap;
+          }
+        }
+
+        button {
+          @include styledButton(
+            $darkColor,
+            $whiteColor,
+            1px solid $darkColor,
+            12px 20px,
+            9px
+          );
+          transition: all 400ms ease-in-out;
+          font-weight: 700;
+          cursor: pointer;
+        }
+      }
+    }
+    .handpick_recipes {
+      position: absolute;
+      top: 2rem;
+      img {
+        position: absolute;
+        top: 2.2rem;
+        right: 2.6rem;
+        width: 4.5rem;
+      }
+    }
+    &::after {
+      @include heroPsudo;
+      right: -3rem;
+    }
+    &::before {
+      @include heroPsudo;
+      left: -3rem;
+    }
+  }
+}
+
+.categories {
+  @include containerStyle($whiteColor, 20px 70px, 30px, 40px);
+  .categories_header {
+    @include flexBetween;
+    margin-bottom: 7rem;
+    h2 {
+      @include textStyle("", 700, 1.5rem);
+    }
+    button {
+      @include styledButton(
+        $primaryColor,
+        $darkColor,
+        2px solid $primaryColor,
+        15px 20px
+      );
     }
   }
 
-  @include maxWidthQuery(1024px) {
-    flex-direction: column;
+  .all_categories {
+    @include flexBetween(50px);
+
+    @each $element,
+      $color
+        in (
+          category1:
+            linear-gradient(
+              (180deg, rgba(112, 130, 70, 0) 0%, rgba(112, 130, 70, 0.1) 100%)
+            ),
+          category2:
+            linear-gradient(
+              (180deg, rgba(108, 198, 63, 0) 0%, rgba(108, 198, 63, 0.1) 100%)
+            ),
+          category3:
+            linear-gradient(
+              180deg,
+              rgba(204, 38, 27, 0) 0%,
+              rgba(204, 38, 27, 0.1) 100%
+            ),
+          category4:
+            linear-gradient(
+              180deg,
+              rgba(240, 158, 0, 0) 0%,
+              rgba(240, 158, 0, 0.1) 100%
+            ),
+          category5:
+            linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0) 0%,
+              rgba(0, 0, 0, 0.05) 100%
+            ),
+          category6:
+            linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0) 0%,
+              rgba(0, 0, 0, 0.05) 100%
+            )
+        )
+    {
+      .#{$element} {
+        @include flexCenter;
+        flex-direction: column;
+        position: relative;
+        width: 180px;
+        height: 152px;
+        border-radius: 30px;
+        background: $color;
+      }
+    }
+
+    img {
+      @include categoryAbsolutePosition;
+      top: -50px;
+    }
+    .img2 {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      top: -20px;
+      right: 10px;
+      filter: blur(15px);
+      opacity: 80%;
+    }
+    p {
+      @include textStyle($darkColor, 600, 1rem);
+      @include categoryAbsolutePosition;
+      letter-spacing: -2%;
+      text-align: center;
+      bottom: -50px;
+    }
+  }
+}
+@include minWidthQuery(1024px) {
+  // Header
+
+  header {
+    .hamburger_menu {
+      display: none;
+    }
+  }
+}
+
+@include maxWidthQuery(1024px) {
+  // Header
+  header {
+    padding: 20px;
+    h1 {
+      font-size: 1.5rem;
+    }
+    ul {
+      display: none;
+    }
+    .socials {
+      display: none;
+    }
+  }
+
+  // Hero
+  .hero_container .hero {
+    flex-direction: column-reverse;
+    height: fit-content;
+  }
+  .hero::after,
+  .hero::before {
+    display: none;
+  }
+  .hero_content {
+    padding: 20px 0;
+  }
+  .handpick_recipes {
+    display: none;
+  }
+
+  // Categories
+  .categories {
+    padding: 40px 0;
+
+    .all_categories {
+      flex-wrap: wrap;
+      gap: 90px;
+    }
   }
 }
