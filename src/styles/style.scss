@@ -299,6 +299,10 @@ h2 {
 header {
   @include flexBetween();
   padding: 30px 5rem;
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  background-color: $whiteColor;
   border-bottom: 1px solid rgba(128, 128, 128, 0.185);
   h1 {
     @include textStyle("", 500, 2rem, Lobster);
@@ -311,10 +315,10 @@ header {
     @include flexBetween(50px);
   }
 
-  a {
+  li {
     @include textStyle($darkColor, 700, 1rem);
-    text-decoration: none;
     white-space: nowrap;
+    cursor: pointer;
     transition: all 300ms ease-in-out;
     &:hover {
       color: #00bde7;
@@ -323,6 +327,9 @@ header {
 
   .socials {
     @include flexBetween(30px);
+  }
+  .hamburger_menu {
+    cursor: pointer;
   }
 }
 
@@ -340,15 +347,22 @@ header {
     transform: translateX(0);
   }
   ul {
-    @extend header;
+    @include flexBetween(50px);
+    background-color: $primaryColor;
     border: none;
     flex-direction: column;
     gap: 50px;
     align-items: start;
     padding: 7rem 4rem;
-    a {
-      color: $darkColor;
-      font-size: 1.3rem;
+
+    li {
+      @include textStyle($darkColor, 700, 1.5rem);
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 300ms ease-in-out;
+      &:hover {
+        color: #00bde7;
+      }
     }
   }
 
@@ -733,7 +747,6 @@ footer {
 
 @include minWidthQuery(1024px) {
   // Header
-
   header {
     .hamburger_menu {
       display: none;
@@ -855,7 +868,7 @@ footer {
       }
     }
   }
-  
+
   // Footer
   footer {
     ul {

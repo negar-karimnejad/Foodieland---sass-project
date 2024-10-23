@@ -32,9 +32,7 @@ kbd,
 q,
 s,
 samp,
-small,
 strike,
-strong,
 sub,
 sup,
 tt,
@@ -70,7 +68,6 @@ figure,
 figcaption,
 footer,
 header,
-.toggle_menu ul,
 hgroup,
 menu,
 nav,
@@ -98,7 +95,6 @@ figcaption,
 figure,
 footer,
 header,
-.toggle_menu ul,
 hgroup,
 menu,
 nav,
@@ -137,83 +133,314 @@ body {
   background-color: #fff;
   color: #1f1f1f;
   font-family: Inter;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-header, .toggle_menu ul {
+h2 {
+  color: "";
+  font-family: default;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 30px;
+}
+
+.paragraph {
+  color: #808080;
+  font-family: default;
+  font-weight: "";
+  font-size: 14px;
+  line-height: 22px;
+  margin-left: 3rem;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  gap: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative;
+  width: 360px;
+  height: 434px;
+  border-radius: 30px;
+  padding: 10px;
+  background: linear-gradient(180deg, rgba(231, 249, 253, 0) 0%, #e7f9fd 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  align-items: start;
+}
+.card h3 {
+  color: "";
+  font-family: default;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+}
+.card h4 {
+  color: "";
+  font-family: default;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+}
+.card img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 30px;
+}
+.card .buttons_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 1rem;
+}
+.card button {
+  background-color: transparent;
+  border: none;
+  white-space: nowrap;
+  color: #808080;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.card .favorite {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  right: 30px;
+  top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+
+.hero, .beChef_container .beChef {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+.hero .hero_image, .beChef_container .beChef .hero_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+}
+.hero .hero_image img, .beChef_container .beChef .hero_image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hero .hero_content, .hero .beChef_container .beChef_content, .beChef_container .hero .beChef_content, .beChef_container .beChef .hero_content, .beChef_container .beChef .beChef_content {
+  flex: 1;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.hero .hero_content .hotRecipes_btn, .hero .beChef_container .beChef_content .hotRecipes_btn, .beChef_container .hero .beChef_content .hotRecipes_btn, .beChef_container .beChef .hero_content .hotRecipes_btn, .beChef_container .beChef .beChef_content .hotRecipes_btn {
+  background-color: #fff;
+  color: #1f1f1f;
+  border: none;
+  border-radius: 50px;
+  padding: 5px 15px;
+  transition: all 400ms ease-in-out;
+  font-weight: 700;
+  font-family: Inter;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-left: 3rem;
+}
+.hero .hero_content .hotRecipes_btn:hover, .hero .beChef_container .beChef_content .hotRecipes_btn:hover, .beChef_container .hero .beChef_content .hotRecipes_btn:hover, .beChef_container .beChef .hero_content .hotRecipes_btn:hover, .beChef_container .beChef .beChef_content .hotRecipes_btn:hover {
+  background-color: #fff;
+  color: #1f1f1f;
+}
+.hero .hero_content img, .hero .beChef_container .beChef_content img, .beChef_container .hero .beChef_content img, .beChef_container .beChef .hero_content img, .beChef_container .beChef .beChef_content img {
+  height: 20px;
+  width: 20px;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.hero .hero_content h1, .hero .beChef_container .beChef_content h1, .beChef_container .hero .beChef_content h1, .beChef_container .beChef .hero_content h1, .beChef_container .beChef .beChef_content h1 {
+  color: "";
+  font-family: default;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 45px;
+  margin-left: 3rem;
+}
+.hero .hero_content .buttons_container, .hero .beChef_container .beChef_content .buttons_container, .beChef_container .hero .beChef_content .buttons_container, .beChef_container .beChef .hero_content .buttons_container, .beChef_container .beChef .beChef_content .buttons_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-left: 2.5rem;
+}
+.hero .hero_content .buttons_container button, .hero .beChef_container .beChef_content .buttons_container button, .beChef_container .hero .beChef_content .buttons_container button, .beChef_container .beChef .hero_content .buttons_container button, .beChef_container .beChef .beChef_content .buttons_container button {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #808080;
+  border: none;
+  border-radius: 30px;
+  padding: 0;
+  transition: all 400ms ease-in-out;
+  font-weight: 700;
+  font-family: Inter;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 139px;
+  height: 40px;
+  white-space: nowrap;
+}
+.hero .hero_content .buttons_container button:hover, .hero .beChef_container .beChef_content .buttons_container button:hover, .beChef_container .hero .beChef_content .buttons_container button:hover, .beChef_container .beChef .hero_content .buttons_container button:hover, .beChef_container .beChef .beChef_content .buttons_container button:hover {
+  background-color: #fff;
+  color: #1f1f1f;
+}
+.hero .hero_content .recipes_info, .hero .beChef_container .beChef_content .recipes_info, .beChef_container .hero .beChef_content .recipes_info, .beChef_container .beChef .hero_content .recipes_info, .beChef_container .beChef .beChef_content .recipes_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 80%;
+  margin-top: 30px;
+  margin-left: 3rem;
+}
+.hero .hero_content .recipes_info .chef_info, .hero .beChef_container .beChef_content .recipes_info .chef_info, .beChef_container .hero .beChef_content .recipes_info .chef_info, .beChef_container .beChef .hero_content .recipes_info .chef_info, .beChef_container .beChef .beChef_content .recipes_info .chef_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.hero .hero_content .recipes_info .chef_info img, .hero .beChef_container .beChef_content .recipes_info .chef_info img, .beChef_container .hero .beChef_content .recipes_info .chef_info img, .beChef_container .beChef .hero_content .recipes_info .chef_info img, .beChef_container .beChef .beChef_content .recipes_info .chef_info img {
+  width: 45px;
+  height: 45px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.hero .hero_content .recipes_info .chef_info .name, .hero .beChef_container .beChef_content .recipes_info .chef_info .name, .beChef_container .hero .beChef_content .recipes_info .chef_info .name, .beChef_container .beChef .hero_content .recipes_info .chef_info .name, .beChef_container .beChef .beChef_content .recipes_info .chef_info .name {
+  color: #1f1f1f;
+  font-family: default;
+  font-weight: 900;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.hero .hero_content .recipes_info .chef_info .date, .hero .beChef_container .beChef_content .recipes_info .chef_info .date, .beChef_container .hero .beChef_content .recipes_info .chef_info .date, .beChef_container .beChef .hero_content .recipes_info .chef_info .date, .beChef_container .beChef .beChef_content .recipes_info .chef_info .date {
+  color: #808080;
+  font-family: default;
+  font-weight: "";
+  font-size: 13px;
+  white-space: nowrap;
+}
+.hero .hero_content .recipes_info button, .hero .beChef_container .beChef_content .recipes_info button, .beChef_container .hero .beChef_content .recipes_info button, .beChef_container .beChef .hero_content .recipes_info button, .beChef_container .beChef .beChef_content .recipes_info button {
+  background-color: #1f1f1f;
+  color: #fff;
+  border: 1px solid #1f1f1f;
+  border-radius: 9px;
+  padding: 12px 20px;
+  transition: all 400ms ease-in-out;
+  font-weight: 700;
+  font-family: Inter;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: all 400ms ease-in-out;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.hero .hero_content .recipes_info button:hover, .hero .beChef_container .beChef_content .recipes_info button:hover, .beChef_container .hero .beChef_content .recipes_info button:hover, .beChef_container .beChef .hero_content .recipes_info button:hover, .beChef_container .beChef .beChef_content .recipes_info button:hover {
+  background-color: #fff;
+  color: #1f1f1f;
+}
+.hero .handpick_recipes, .beChef_container .beChef .handpick_recipes {
+  position: absolute;
+  top: 2rem;
+}
+.hero .handpick_recipes img, .beChef_container .beChef .handpick_recipes img {
+  position: absolute;
+  top: 2.2rem;
+  right: 2.6rem;
+  width: 4.5rem;
+}
+
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 0px;
   padding: 30px 5rem;
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  background-color: #fff;
   border-bottom: 1px solid rgba(128, 128, 128, 0.185);
 }
-@media (max-width: 1024px) {
-  header, .toggle_menu ul {
-    padding: 20px;
-  }
-}
-header h1, .toggle_menu ul h1 {
+header h1 {
+  color: "";
   font-family: Lobster;
   font-weight: 500;
   font-size: 2rem;
 }
-header h1 span, .toggle_menu ul h1 span {
+header h1 span {
   color: orangered;
 }
-@media (max-width: 1024px) {
-  header h1, .toggle_menu ul h1 {
-    font-size: 1.5rem;
-  }
-}
-header ul, .toggle_menu ul ul {
+header ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 50px;
 }
-@media (max-width: 1024px) {
-  header ul, .toggle_menu ul ul {
-    display: none;
-  }
-}
-header a, .toggle_menu ul a {
+header li {
   color: #1f1f1f;
-  text-decoration: none;
+  font-family: default;
   font-weight: 700;
-  cursor: pointer;
-  border-bottom: none;
+  font-size: 1rem;
   white-space: nowrap;
+  cursor: pointer;
   transition: all 300ms ease-in-out;
 }
-header a:hover, .toggle_menu ul a:hover {
+header li:hover {
   color: #00bde7;
 }
-header .socials, .toggle_menu ul .socials {
+header .socials {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 30px;
 }
-@media (max-width: 1024px) {
-  header .socials, .toggle_menu ul .socials {
-    display: none;
-  }
-}
-header span, .toggle_menu ul span {
+header .hamburger_menu {
   cursor: pointer;
-}
-@media (min-width: 1024px) {
-  header span, .toggle_menu ul span {
-    display: none;
-  }
 }
 
 .toggle_menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 40rem;
+  overflow: hidden;
   background-color: #e7f9fd;
   z-index: 100;
   transform: translateX(-100%);
@@ -223,21 +450,37 @@ header span, .toggle_menu ul span {
   transform: translateX(0);
 }
 .toggle_menu ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  background-color: #e7f9fd;
+  border: none;
   flex-direction: column;
   gap: 50px;
   align-items: start;
   padding: 7rem 4rem;
 }
-.toggle_menu ul a {
+.toggle_menu ul li {
   color: #1f1f1f;
-  font-size: 1.3rem;
+  font-family: default;
+  font-weight: 700;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+.toggle_menu ul li:hover {
+  color: #00bde7;
 }
 .toggle_menu span {
+  color: "";
+  font-family: default;
+  font-weight: 500;
+  font-size: 2rem;
   position: absolute;
   right: 22px;
   top: 12px;
-  font-size: 2rem;
-  font-weight: 500;
   cursor: pointer;
 }
 .toggle_menu .socials_container {
@@ -250,111 +493,226 @@ header span, .toggle_menu ul span {
   gap: 10px;
 }
 
-.hero {
-  background-color: #e7f9fd;
-  margin: 30px;
+.hero_container {
+  position: relative;
+}
+.hero_container .hero, .hero_container .beChef_container .beChef, .beChef_container .hero_container .beChef {
+  background: #e7f9fd;
+  margin: 20px 70px;
+  padding: 0;
   border-radius: 30px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 450px;
 }
-.hero .hero_image {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+@media (max-width: 1024px) {
+  .hero_container .hero, .hero_container .beChef_container .beChef, .beChef_container .hero_container .beChef {
+    margin: 20px;
+  }
+}
+.hero_container .hero::after, .hero_container .beChef_container .beChef::after, .beChef_container .hero_container .beChef::after {
+  content: "";
+  position: absolute;
+  top: 0;
   height: 100%;
+  width: 5rem;
+  background: #e7f9fd;
+  border-radius: 30px;
+  right: -3rem;
 }
-.hero .hero_image img {
-  width: 100%;
+.hero_container .hero::before, .hero_container .beChef_container .beChef::before, .beChef_container .hero_container .beChef::before {
+  content: "";
+  position: absolute;
+  top: 0;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  width: 5rem;
+  background: #e7f9fd;
+  border-radius: 30px;
+  left: -3rem;
 }
-.hero .hero_content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  gap: 30px;
-  padding: 3rem;
+
+.categories {
+  background: #fff;
+  margin: 20px 70px;
+  padding: 40px 0;
+  border-radius: 30px;
+  overflow: hidden;
 }
-.hero .hero_content button {
-  background-color: #fff;
-  color: #1f1f1f;
-  border: none;
-  border-radius: 50px;
-  padding: 5px 15px;
-  transition: all 400ms ease-in-out;
-  font-weight: 700;
-  font-family: Inter;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
+@media (max-width: 1024px) {
+  .categories {
+    margin: 20px;
+  }
 }
-.hero .hero_content button:hover {
-  background-color: #fff;
-  color: #1f1f1f;
-}
-.hero .hero_content img {
-  height: 20px;
-  width: 20px;
-  -o-object-fit: fill;
-     object-fit: fill;
-}
-.hero .hero_content h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 45px;
-}
-.hero .hero_content p {
-  color: #808080;
-  line-height: 22px;
-  font-size: 14px;
-}
-.hero .hero_content .buttons_container {
-  display: flex;
-  gap: 20px;
-}
-.hero .hero_content .buttons_container button {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-.hero .hero_content .recipes_info {
+.categories .categories_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 0px;
-  width: 100%;
-  margin-top: 30px;
-  gap: 10px;
+  margin-bottom: 7rem;
 }
-.hero .hero_content .recipes_info .chef_info {
+.categories .categories_header button {
+  background-color: #e7f9fd;
+  color: #1f1f1f;
+  border: 2px solid #e7f9fd;
+  border-radius: 8px;
+  padding: 15px 20px;
+  transition: all 400ms ease-in-out;
+  font-weight: 700;
+  font-family: Inter;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 10px;
 }
-.hero .hero_content .recipes_info img {
-  width: 45px;
-  height: 45px;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-.hero .hero_content .recipes_info .name {
-  font-size: 13px;
+.categories .categories_header button:hover {
+  background-color: #fff;
   color: #1f1f1f;
-  font-weight: 900;
 }
-.hero .hero_content .recipes_info .date {
-  font-size: 13px;
-  color: #808080;
+.categories .all_categories {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
 }
-.hero .hero_content .recipes_info button {
+.categories .all_categories .category1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  flex-direction: column;
+  position: relative;
+  width: 180px;
+  height: 152px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(112, 130, 70, 0) 0%, rgba(112, 130, 70, 0.1) 100%);
+}
+.categories .all_categories .category2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  flex-direction: column;
+  position: relative;
+  width: 180px;
+  height: 152px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(108, 198, 63, 0) 0%, rgba(108, 198, 63, 0.1) 100%);
+}
+.categories .all_categories .category3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  flex-direction: column;
+  position: relative;
+  width: 180px;
+  height: 152px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(204, 38, 27, 0) 0%, rgba(204, 38, 27, 0.1) 100%);
+}
+.categories .all_categories .category4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  flex-direction: column;
+  position: relative;
+  width: 180px;
+  height: 152px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(240, 158, 0, 0) 0%, rgba(240, 158, 0, 0.1) 100%);
+}
+.categories .all_categories .category5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  flex-direction: column;
+  position: relative;
+  width: 180px;
+  height: 152px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 100%);
+}
+.categories .all_categories .category6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  flex-direction: column;
+  position: relative;
+  width: 180px;
+  height: 152px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 100%);
+}
+.categories .all_categories img {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: -50px;
+}
+.categories .all_categories .img2 {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: -20px;
+  right: 10px;
+  filter: blur(15px);
+  opacity: 80%;
+}
+.categories .all_categories p {
+  color: #1f1f1f;
+  font-family: default;
+  font-weight: 600;
+  font-size: 1rem;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  letter-spacing: -2%;
+  text-align: center;
+  bottom: -50px;
+}
+
+.simple_recipes {
+  background: #fff;
+  margin: 20px 70px;
+  padding: 0;
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  flex-direction: column;
+}
+@media (max-width: 1024px) {
+  .simple_recipes {
+    margin: 20px;
+  }
+}
+.simple_recipes p {
+  width: 50%;
+  margin: 20px;
+  text-align: center;
+}
+
+.beChef_container .beChef {
+  background: #fff;
+  margin: 100px 70px;
+  padding: 0;
+  border-radius: 30px;
+  overflow: hidden;
+}
+@media (max-width: 1024px) {
+  .beChef_container .beChef {
+    margin: 20px;
+  }
+}
+.beChef_container .beChef_content h1,
+.beChef_container .beChef_content p {
+  margin-left: 0 !important;
+}
+.beChef_container .learnMore_btn {
   background-color: #1f1f1f;
   color: #fff;
   border: 1px solid #1f1f1f;
@@ -364,19 +722,421 @@ header span, .toggle_menu ul span {
   font-weight: 700;
   font-family: Inter;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 10px;
   transition: all 400ms ease-in-out;
   font-weight: 700;
+  white-space: nowrap;
   cursor: pointer;
 }
-.hero .hero_content .recipes_info button:hover {
+.beChef_container .learnMore_btn:hover {
   background-color: #fff;
   color: #1f1f1f;
 }
+
+.delicious_recipes {
+  background: #fff;
+  margin: 150px 70px;
+  padding: 0;
+  border-radius: 0px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  flex-direction: column;
+}
 @media (max-width: 1024px) {
-  .hero {
+  .delicious_recipes {
+    margin: 20px;
+  }
+}
+.delicious_recipes .delicious_recipes_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  margin-bottom: 50px;
+}
+.delicious_recipes .card {
+  width: 260px;
+  height: 316px;
+}
+.delicious_recipes .card .favorite {
+  width: 30px;
+  height: 30px;
+}
+
+.instagram {
+  background: linear-gradient(180deg, rgba(231, 249, 253, 0) 0%, #e7f9fd 100%);
+  margin: 0;
+  padding: 50px 70px 200px 70px;
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  flex-direction: column;
+}
+@media (max-width: 1024px) {
+  .instagram {
+    margin: 20px;
+  }
+}
+.instagram .instagram_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  margin-bottom: 50px;
+  text-align: center;
+  width: 80%;
+}
+.instagram .card {
+  width: 280px;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+  background: #fff;
+  border-radius: 0;
+  padding: 0;
+  display: block;
+}
+.instagram .card .card_header {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+}
+.instagram .card .card_header .card_header_left {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.instagram .card .card_header .card_header_left img {
+  width: 12%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 50%;
+}
+.instagram .card .card_header .card_header_left .card_header_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-direction: column;
+  font-size: 11px;
+}
+.instagram .card .card_header .card_header_left .card_header_info div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+.instagram .card img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 0;
+}
+.instagram .card .slides {
+  color: #fff;
+  font-family: default;
+  font-weight: 300;
+  font-size: 11px;
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  opacity: 60%;
+  background: #000000;
+  border-radius: 10px;
+  right: 15px;
+  top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+.instagram .content {
+  padding: 10px;
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  line-height: 13px;
+}
+.instagram ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+}
+.instagram ul .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.instagram ul .dots {
+  font-size: 0.7rem;
+}
+.instagram ul .blueDot {
+  color: rgb(0, 174, 255);
+}
+.instagram ul .grayDot {
+  color: #c7c7c7;
+}
+.instagram .likes {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.instagram .likes img {
+  width: 15px;
+  height: 15px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.instagram small {
+  color: #c7c7c7;
+}
+
+.inbox {
+  position: relative;
+  background: #e7f9fd;
+  margin: 20px 70px;
+  padding: 70px 30px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+@media (max-width: 1024px) {
+  .inbox {
+    margin: 20px;
+  }
+}
+.inbox .inbox_header {
+  text-align: center;
+}
+.inbox .inbox_header p {
+  margin: 10px auto;
+  width: 50%;
+}
+.inbox form {
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  background-color: #fff;
+  padding: 0 10px 0 40px;
+  width: 420px;
+  height: 70px;
+  border-radius: 24px;
+}
+.inbox input {
+  border: none;
+  outline: none;
+}
+.inbox button {
+  width: 160px;
+  height: 50px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 5px;
+  transition: all 400ms ease-in-out;
+  font-weight: 700;
+  font-family: Inter;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.inbox button:hover {
+  background-color: #fff;
+  color: #1f1f1f;
+}
+.inbox .plate {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.inbox .salad {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.inbox .rucola {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+.inbox .rucola img {
+  width: 80px;
+}
+
+footer {
+  background: #fff;
+  margin: 20px 70px;
+  padding: 100px 30px 0 30px;
+  border-radius: 0;
+  overflow: hidden;
+}
+@media (max-width: 1024px) {
+  footer {
+    margin: 20px;
+  }
+}
+footer div,
+footer ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+footer .logo {
+  flex-direction: column;
+  align-items: start;
+}
+footer .logo h6 {
+  color: "";
+  font-family: Lobster;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+footer .logo h6 span {
+  color: orangered;
+}
+footer .logo p {
+  color: #696969;
+  font-size: 15px;
+}
+footer a {
+  color: #1f1f1f;
+  font-family: default;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 300ms ease-in-out;
+}
+footer a:hover {
+  color: #00bde7;
+}
+footer .copyright {
+  padding-top: 2rem;
+  margin-top: 3rem;
+  border-top: 1px solid #dfdfdf;
+  font-size: 14px;
+  color: #6d6d6d;
+}
+footer .copyright span {
+  color: rgb(255, 83, 83);
+}
+
+@media (min-width: 1024px) {
+  header .hamburger_menu {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .card {
+    flex-grow: 5;
+  }
+  .delicious_recipes .card {
+    height: 434px;
+  }
+  .delicious_recipes_header {
     flex-direction: column;
+  }
+}
+@media (max-width: 1024px) {
+  header {
+    padding: 20px;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  header ul {
+    display: none;
+  }
+  header .socials {
+    display: none;
+  }
+  .hero_container .hero,
+  .hero,
+  .beChef_container .beChef {
+    flex-direction: column-reverse;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .hero::after, .beChef_container .beChef::after,
+  .hero::before,
+  .beChef_container .beChef::before {
+    display: none;
+  }
+  .hero_content, .beChef_container .beChef_content {
+    padding: 20px 0;
+  }
+  .handpick_recipes {
+    display: none;
+  }
+  .categories {
+    padding: 40px 0;
+  }
+  .categories .all_categories {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 70px;
+  }
+  .simple_recipes p {
+    width: 100%;
+  }
+  .delicious_recipes {
+    margin: 70px 20px;
+  }
+  .delicious_recipes .delicious_recipes_header {
+    text-align: center;
+    row-gap: 10px;
+  }
+  .beChef_image img {
+    width: 100%;
+  }
+  .instagram {
+    padding: 100px 20px;
+    margin: 0;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .instagram .box {
+    row-gap: 2rem;
+  }
+  .instagram .instagram_header {
+    width: 100% !important;
+  }
+  .instagram .instagram_header p {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .inbox {
+    padding: 100px 20px;
+  }
+  .inbox form {
+    width: 70%;
+  }
+  .inbox .plate img {
+    width: 150px;
+  }
+  .inbox .salad img {
+    width: 200px;
+  }
+  footer ul {
+    flex-direction: column;
+    align-items: start;
   }
 }/*# sourceMappingURL=style.css.map */
