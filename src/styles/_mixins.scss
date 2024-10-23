@@ -1,5 +1,5 @@
 @mixin containerStyle($bgColor, $margin, $rounded, $padding: 0) {
-  background-color: $bgColor;
+  background: $bgColor;
   margin: $margin;
   padding: $padding;
   border-radius: $rounded;

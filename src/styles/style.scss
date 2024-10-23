@@ -38,9 +38,7 @@ kbd,
 q,
 s,
 samp,
-small,
 strike,
-strong,
 sub,
 sup,
 tt,
@@ -139,6 +137,165 @@ body {
   overflow-x: hidden;
 }
 
+h2 {
+  @include textStyle("", 700, 1.5rem);
+  line-height: 30px;
+}
+
+.paragraph {
+  @include textStyle($grayColor, "", 14px);
+  line-height: 22px;
+  margin-left: 3rem;
+}
+
+.box {
+  @include flexBetween;
+  gap: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.card {
+  position: relative;
+  width: 360px;
+  height: 434px;
+  border-radius: 30px;
+  padding: 10px;
+  background: linear-gradient(180deg, rgba(231, 249, 253, 0) 0%, #e7f9fd 100%);
+  @include flexBetween(20px);
+  flex-direction: column;
+  align-items: start;
+  h3 {
+    @include textStyle("", 600, 24px);
+    line-height: 30px;
+  }
+  h4 {
+    @include textStyle("", 600, 18px);
+    line-height: 25px;
+  }
+  img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 30px;
+  }
+  .buttons_container {
+    @include flexCenter(20px);
+    margin-bottom: 1rem;
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    white-space: nowrap;
+    color: $grayColor;
+    @include flexCenter(5px);
+  }
+
+  .favorite {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: $whiteColor;
+    border-radius: 50%;
+    right: 30px;
+    top: 30px;
+    @include flexCenter;
+  }
+}
+.hero {
+  @include flexCenter;
+  .hero_image {
+    @include flexCenter;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .hero_content {
+    flex: 1;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+
+    .hotRecipes_btn {
+      @include styledButton($whiteColor, $darkColor, none, 5px 15px, 50px);
+      margin-left: 3rem;
+    }
+    img {
+      height: 20px;
+      width: 20px;
+      object-fit: fill;
+    }
+    h1 {
+      @include textStyle("", 700, 2.5rem);
+      line-height: 45px;
+      margin-left: 3rem;
+    }
+
+    .buttons_container {
+      @include flexCenter(20px);
+      padding-left: 2.5rem;
+      button {
+        @include styledButton(rgba(0, 0, 0, 0.05), $grayColor, none, 0, 30px);
+        width: 139px;
+        height: 40px;
+        white-space: nowrap;
+      }
+    }
+    .recipes_info {
+      @include flexBetween(10px);
+      width: 80%;
+      margin-top: 30px;
+      margin-left: 3rem;
+
+      .chef_info {
+        @include flexBetween(10px);
+        img {
+          width: 45px;
+          height: 45px;
+          object-fit: contain;
+        }
+        .name {
+          @include textStyle($darkColor, 900, 13px);
+          margin-bottom: 10px;
+        }
+        .date {
+          @include textStyle($grayColor, "", 13px);
+          white-space: nowrap;
+        }
+      }
+
+      button {
+        @include styledButton(
+          $darkColor,
+          $whiteColor,
+          1px solid $darkColor,
+          12px 20px,
+          9px
+        );
+        transition: all 400ms ease-in-out;
+        font-weight: 700;
+        white-space: nowrap;
+        cursor: pointer;
+      }
+    }
+  }
+  .handpick_recipes {
+    position: absolute;
+    top: 2rem;
+    img {
+      position: absolute;
+      top: 2.2rem;
+      right: 2.6rem;
+      width: 4.5rem;
+    }
+  }
+}
+
 header {
   @include flexBetween();
   padding: 30px 5rem;
@@ -217,103 +374,9 @@ header {
 
 .hero_container {
   position: relative;
-
   .hero {
-    @include flexCenter;
     @include containerStyle($primaryColor, 20px 70px, 30px);
     height: 450px;
-    .hero_image {
-      @include flexCenter;
-      flex: 1;
-      width: 100%;
-      height: 100%;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-    .hero_content {
-      flex: 1;
-      display: flex;
-      align-items: start;
-      justify-content: center;
-      flex-direction: column;
-      gap: 30px;
-
-      button {
-        @include styledButton($whiteColor, $darkColor, none, 5px 15px, 50px);
-        margin-left: 3rem;
-      }
-      img {
-        height: 20px;
-        width: 20px;
-        object-fit: fill;
-      }
-      h1 {
-        @include textStyle("", 700, 2.5rem);
-        line-height: 45px;
-        margin-left: 3rem;
-      }
-      p {
-        @include textStyle($grayColor, "", 14px);
-        line-height: 22px;
-        width: 80%;
-        margin-left: 3rem;
-      }
-      .buttons_container {
-        @include flexCenter(20px);
-        button {
-          background-color: rgba(0, 0, 0, 0.05);
-        }
-      }
-      .recipes_info {
-        @include flexBetween(10px);
-        width: 80%;
-        margin-top: 30px;
-        margin-left: 3rem;
-
-        .chef_info {
-          @include flexBetween(10px);
-          img {
-            width: 45px;
-            height: 45px;
-            object-fit: contain;
-          }
-          .name {
-            @include textStyle($darkColor, 900, 13px);
-            margin-bottom: 10px;
-          }
-          .date {
-            @include textStyle($grayColor, "", 13px);
-            white-space: nowrap;
-          }
-        }
-
-        button {
-          @include styledButton(
-            $darkColor,
-            $whiteColor,
-            1px solid $darkColor,
-            12px 20px,
-            9px
-          );
-          transition: all 400ms ease-in-out;
-          font-weight: 700;
-          cursor: pointer;
-        }
-      }
-    }
-    .handpick_recipes {
-      position: absolute;
-      top: 2rem;
-      img {
-        position: absolute;
-        top: 2.2rem;
-        right: 2.6rem;
-        width: 4.5rem;
-      }
-    }
     &::after {
       @include heroPsudo;
       right: -3rem;
@@ -326,13 +389,10 @@ header {
 }
 
 .categories {
-  @include containerStyle($whiteColor, 20px 70px, 30px, 40px);
+  @include containerStyle($whiteColor, 20px 70px, 30px, 40px 0);
   .categories_header {
     @include flexBetween;
     margin-bottom: 7rem;
-    h2 {
-      @include textStyle("", 700, 1.5rem);
-    }
     button {
       @include styledButton(
         $primaryColor,
@@ -345,7 +405,6 @@ header {
 
   .all_categories {
     @include flexBetween(50px);
-
     @each $element,
       $color
         in (
@@ -416,6 +475,262 @@ header {
     }
   }
 }
+
+.simple_recipes {
+  @include containerStyle($whiteColor, 20px 70px, 30px);
+  @include flexCenter;
+  flex-direction: column;
+  p {
+    width: 50%;
+    margin: 20px;
+    text-align: center;
+  }
+}
+
+.beChef_container {
+  .beChef {
+    @extend .hero;
+    @include containerStyle($whiteColor, 100px 70px, 30px);
+  }
+  .beChef_content {
+    @extend .hero_content;
+    h1,
+    p {
+      margin-left: 0 !important;
+    }
+  }
+  .learnMore_btn {
+    @include styledButton(
+      $darkColor,
+      $whiteColor,
+      1px solid $darkColor,
+      12px 20px,
+      9px
+    );
+    transition: all 400ms ease-in-out;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+}
+
+.delicious_recipes {
+  @include containerStyle($whiteColor, 150px 70px, 0px);
+  @include flexCenter;
+  flex-direction: column;
+  .delicious_recipes_header {
+    @include flexBetween;
+    margin-bottom: 50px;
+  }
+
+  .card {
+    width: 260px;
+    height: 316px;
+    .favorite {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.instagram {
+  @include containerStyle(
+    linear-gradient(180deg, rgba(231, 249, 253, 0) 0%, #e7f9fd 100%),
+    0,
+    0,
+    50px 70px 200px 70px
+  );
+  @include flexCenter;
+  flex-direction: column;
+
+  .instagram_header {
+    @include flexCenter(10px);
+    flex-direction: column;
+    margin-bottom: 50px;
+    text-align: center;
+    width: 80%;
+  }
+
+  .card {
+    width: 280px;
+    height: fit-content;
+    position: relative;
+    background: $whiteColor;
+    border-radius: 0;
+    padding: 0;
+    display: block;
+
+    .card_header {
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      .card_header_left {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        img {
+          width: 12%;
+          object-fit: contain;
+          border-radius: 50%;
+        }
+        .card_header_info {
+          @include flexCenter(2px);
+          flex-direction: column;
+          font-size: 11px;
+          div {
+            @include flexCenter;
+          }
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      object-fit: contain;
+      border-radius: 0;
+    }
+    .slides {
+      @include textStyle($whiteColor, 300, 11px);
+      position: absolute;
+      width: 30px;
+      height: 20px;
+      opacity: 60%;
+      background: #000000;
+      border-radius: 10px;
+      right: 15px;
+      top: 4rem;
+      @include flexCenter;
+    }
+  }
+  .content {
+    padding: 10px;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    line-height: 13px;
+  }
+  ul {
+    @include flexBetween;
+
+    .actions {
+      @include flexCenter(10px);
+    }
+    .dots {
+      font-size: 0.7rem;
+    }
+
+    .blueDot {
+      color: rgb(0, 174, 255);
+    }
+    .grayDot {
+      color: #c7c7c7;
+    }
+  }
+  .likes {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    img {
+      width: 15px;
+      height: 15px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+  small {
+    color: #c7c7c7;
+  }
+}
+
+.inbox {
+  position: relative;
+  @include containerStyle($primaryColor, 20px 70px, 30px, 70px 30px);
+  .inbox_header {
+    text-align: center;
+    p {
+      margin: 10px auto;
+      width: 50%;
+    }
+  }
+  form {
+    margin: 50px auto;
+    @include flexBetween;
+    background-color: $whiteColor;
+    padding: 0 10px 0 40px;
+    width: 420px;
+    height: 70px;
+    border-radius: 24px;
+  }
+  input {
+    border: none;
+    outline: none;
+  }
+  button {
+    width: 160px;
+    height: 50px;
+    @include styledButton(#000, $whiteColor, none, 5px, 16px);
+  }
+  .plate {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .salad {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .rucola {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    img {
+      width: 80px;
+    }
+  }
+}
+footer {
+  @include containerStyle($whiteColor, 20px 70px, 0, 100px 30px 0 30px);
+  div,
+  ul {
+    @include flexBetween(10px);
+  }
+  .logo {
+    flex-direction: column;
+    align-items: start;
+    h6 {
+      @include textStyle("", 500, 1.5rem, Lobster);
+      span {
+        color: orangered;
+      }
+    }
+    p {
+      color: #696969;
+      font-size: 15px;
+    }
+  }
+  a {
+    @include textStyle($darkColor, 700, 1rem);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 300ms ease-in-out;
+    &:hover {
+      color: #00bde7;
+    }
+  }
+  .copyright {
+    padding-top: 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid #dfdfdf;
+    font-size: 14px;
+    color: #6d6d6d;
+    span {
+      color: rgb(255, 83, 83);
+    }
+  }
+}
+
 @include minWidthQuery(1024px) {
   // Header
 
@@ -423,6 +738,20 @@ header {
     .hamburger_menu {
       display: none;
     }
+  }
+}
+
+@include maxWidthQuery(600px) {
+  .card {
+    flex-grow: 5;
+  }
+  .delicious_recipes {
+    .card {
+      height: 434px;
+    }
+  }
+  .delicious_recipes_header {
+    flex-direction: column;
   }
 }
 
@@ -442,10 +771,12 @@ header {
   }
 
   // Hero
-  .hero_container .hero {
+  .hero_container .hero,
+  .hero {
     flex-direction: column-reverse;
     height: fit-content;
   }
+
   .hero::after,
   .hero::before {
     display: none;
@@ -453,6 +784,7 @@ header {
   .hero_content {
     padding: 20px 0;
   }
+
   .handpick_recipes {
     display: none;
   }
@@ -462,8 +794,73 @@ header {
     padding: 40px 0;
 
     .all_categories {
+      justify-content: center;
       flex-wrap: wrap;
-      gap: 90px;
+      gap: 70px;
+    }
+  }
+  // Simple recipes
+  .simple_recipes {
+    p {
+      width: 100%;
+    }
+  }
+  // Selicious recipes
+  .delicious_recipes {
+    margin: 70px 20px;
+    .delicious_recipes_header {
+      text-align: center;
+      row-gap: 10px;
+    }
+  }
+
+  // Be chef
+  .beChef_image img {
+    width: 100%;
+  }
+
+  // Instagram
+  .instagram {
+    padding: 100px 20px;
+    margin: 0;
+    height: fit-content;
+    .box {
+      row-gap: 2rem;
+    }
+    .instagram_header {
+      width: 100% !important;
+
+      p {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  // Inbox
+  .inbox {
+    padding: 100px 20px;
+    form {
+      width: 70%;
+    }
+    .plate {
+      img {
+        width: 150px;
+      }
+    }
+    .salad {
+      img {
+        width: 200px;
+      }
+    }
+  }
+  
+  // Footer
+  footer {
+    ul {
+      flex-direction: column;
+      align-items: start;
     }
   }
 }
