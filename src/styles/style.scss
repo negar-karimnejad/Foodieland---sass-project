@@ -309,7 +309,7 @@ h2 {
   }
 }
 header {
-  @include flexBetween();
+  @include flexBetween;
   padding: 30px 5rem;
   position: sticky;
   top: 0;

@@ -9,7 +9,7 @@
   }
 }
 
-@mixin flexCenter($gap: 0px) {
+@mixin flexCenter($gap: 0) {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +21,7 @@
   height: 100px;
 }
 
-@mixin flexBetween($gap: 0px) {
+@mixin flexBetween($gap: 0) {
   display: flex;
   justify-content: space-between;
   align-items: center;
