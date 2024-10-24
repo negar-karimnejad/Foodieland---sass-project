@@ -725,7 +725,6 @@ footer {
     gap: 20px;
   }
   .copyright {
-    @include flexCenter;
     padding-top: 2rem;
     margin-top: 3rem;
     border-top: 1px solid #dfdfdf;
@@ -867,7 +866,7 @@ footer {
       }
     }
     form {
-      width: 80%;
+      width: 85%;
     }
     .plate {
       img {
@@ -886,6 +885,9 @@ footer {
     padding: 20px;
     .socials {
       display: none;
+    }
+    .copyright {
+      @include flexCenter;
     }
   }
 }
