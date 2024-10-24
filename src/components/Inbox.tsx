@@ -1,10 +1,8 @@
-import useScrollToSection from "../hook/useScrollToSection";
+import { Ref } from "react";
 
-export default function Inbox() {
-  const { ContactRef } = useScrollToSection();
-
+export default function Inbox({ ref }: { ref: Ref<HTMLDivElement> }) {
   return (
-    <div ref={ContactRef} className="inbox">
+    <div ref={ref} className="inbox">
       <div className="inbox_header">
         <h2>Deliciousness to your inbox</h2>
         <p className="paragraph">

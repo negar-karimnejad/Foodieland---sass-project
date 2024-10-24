@@ -1,5 +1,5 @@
+import { Ref } from "react";
 import { GoDotFill } from "react-icons/go";
-import useScrollToSection from "../hook/useScrollToSection";
 
 const posts = [
   {
@@ -24,11 +24,9 @@ const posts = [
   },
 ];
 
-export default function Instagram() {
-  const { BlogRef } = useScrollToSection();
-
+export default function Instagram({ ref }: { ref: Ref<HTMLDivElement> }) {
   return (
-    <div ref={BlogRef} className="instagram">
+    <div ref={ref} className="instagram">
       <div className="instagram_header">
         <h2>Check out @foodieland on Instagram</h2>
         <p className="paragraph">
