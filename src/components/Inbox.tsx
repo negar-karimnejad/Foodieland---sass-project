@@ -6,8 +6,8 @@ const Inbox = React.forwardRef((_props, ref: Ref<HTMLDivElement>) => {
       <div className="inbox_header">
         <h2>Deliciousness to your inbox</h2>
         <p className="paragraph">
-          Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqut enim ad minim
+          Lorem ipsum dolor sit amet, consecte tuipisicing elit, sed do eiusmod
+          tempor incidi dunt ut labore et dolore magna aliqut enim ad minim
         </p>
       </div>
       <form>

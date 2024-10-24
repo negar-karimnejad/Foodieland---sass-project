@@ -106,7 +106,7 @@ export default function App() {
             <h6>
               Foodieland<span>.</span>
             </h6>
-            <p>Lorem ipsum dolor sit amet, consectetuipisicing elit, </p>
+            <p>Lorem ipsum dolor sit amet, consectetui pisicing elit, </p>
           </div>
           <ul className="header_menu">
             <li onClick={() => scrollToSection(RecipesRef)}>Recipes</li>

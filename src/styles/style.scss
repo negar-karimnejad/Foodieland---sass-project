@@ -238,7 +238,7 @@ h2 {
 
     .buttons_container {
       @include flexCenter(20px);
-      padding-left: 2.5rem;
+      margin-left: 2.5rem;
       button {
         @include styledButton(rgba(0, 0, 0, 0.05), $grayColor, none, 0, 30px);
         width: 139px;
@@ -725,6 +725,7 @@ footer {
     gap: 20px;
   }
   .copyright {
+    @include flexCenter;
     padding-top: 2rem;
     margin-top: 3rem;
     border-top: 1px solid #dfdfdf;
@@ -780,7 +781,13 @@ footer {
     flex-direction: column-reverse;
     height: fit-content;
   }
-
+  .hotRecipes_btn,
+  h1,
+  .hero p,
+  .buttons_container,
+  .recipes_info {
+    margin-left: 1rem !important;
+  }
   .hero::after,
   .hero::before {
     display: none;
@@ -800,7 +807,15 @@ footer {
     .all_categories {
       justify-content: center;
       flex-wrap: wrap;
-      gap: 70px;
+      row-gap: 70px;
+    }
+    .category1,
+    .category2,
+    .category3,
+    .category4,
+    .category5,
+    .category6 {
+      width: 150px !important;
     }
   }
   // Simple recipes
@@ -825,7 +840,7 @@ footer {
 
   // Instagram
   .instagram {
-    padding: 100px 20px;
+    padding: 50px 20px;
     margin: 0;
     height: fit-content;
     .box {
@@ -845,8 +860,14 @@ footer {
   // Inbox
   .inbox {
     padding: 100px 20px;
+    .inbox_header {
+      p,
+      .paragraph {
+        width: 100%;
+      }
+    }
     form {
-      width: 70%;
+      width: 80%;
     }
     .plate {
       img {
@@ -857,6 +878,14 @@ footer {
       img {
         width: 200px;
       }
+    }
+  }
+
+  // footer
+  footer {
+    padding: 20px;
+    .socials {
+      display: none;
     }
   }
 }
