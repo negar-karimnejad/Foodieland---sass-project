@@ -1,7 +1,7 @@
-import { IoMenu } from "react-icons/io5";
-import Socials from "./Socials";
 import { useState } from "react";
+import { IoMenu } from "react-icons/io5";
 import useScrollToSection from "../hook/useScrollToSection";
+import Socials from "./Socials";
 
 export default function Header() {
   const [openMenuModal, setOpenMenuModal] = useState(false);
