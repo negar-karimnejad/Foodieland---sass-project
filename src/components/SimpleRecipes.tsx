@@ -123,5 +123,4 @@ const SimpleRecipes = React.forwardRef((_props, ref: Ref<HTMLDivElement>) => {
     </div>
   );
 });
-
 export default SimpleRecipes;
