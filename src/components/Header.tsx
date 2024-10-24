@@ -9,15 +9,15 @@ export default function Header() {
   const HeaderMenu = () => {
     const {
       HomeRef,
-      scrollToSection,
-      RecipesRef,
       BlogRef,
       AboutRef,
       ContactRef,
+      RecipesRef,
+      scrollToSection,
     } = useScrollToSection();
 
     return (
-      <ul>
+      <ul className="header_menu">
         <li
           onClick={() => {
             scrollToSection(HomeRef);
@@ -61,6 +61,7 @@ export default function Header() {
       </ul>
     );
   };
+
   return (
     <>
       <header>

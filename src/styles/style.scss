@@ -295,7 +295,19 @@ h2 {
     }
   }
 }
+.header_menu {
+  @include flexBetween(50px);
+}
 
+.header_menu li {
+  @include textStyle($darkColor, 700, 1rem);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  &:hover {
+    color: #00bde7;
+  }
+}
 header {
   @include flexBetween();
   padding: 30px 5rem;
@@ -308,20 +320,6 @@ header {
     @include textStyle("", 500, 2rem, Lobster);
     span {
       color: orangered;
-    }
-  }
-
-  ul {
-    @include flexBetween(50px);
-  }
-
-  li {
-    @include textStyle($darkColor, 700, 1rem);
-    white-space: nowrap;
-    cursor: pointer;
-    transition: all 300ms ease-in-out;
-    &:hover {
-      color: #00bde7;
     }
   }
 
@@ -706,8 +704,7 @@ header {
 }
 footer {
   @include containerStyle($whiteColor, 20px 70px, 0, 100px 30px 0 30px);
-  div,
-  ul {
+  div {
     @include flexBetween(10px);
   }
   .logo {
@@ -724,14 +721,8 @@ footer {
       font-size: 15px;
     }
   }
-  a {
-    @include textStyle($darkColor, 700, 1rem);
-    text-decoration: none;
-    white-space: nowrap;
-    transition: all 300ms ease-in-out;
-    &:hover {
-      color: #00bde7;
-    }
+  .header_menu {
+    gap: 20px;
   }
   .copyright {
     padding-top: 2rem;
@@ -769,14 +760,14 @@ footer {
 }
 
 @include maxWidthQuery(1024px) {
+  .header_menu {
+    display: none;
+  }
   // Header
   header {
     padding: 20px;
     h1 {
       font-size: 1.5rem;
-    }
-    ul {
-      display: none;
     }
     .socials {
       display: none;
@@ -866,14 +857,6 @@ footer {
       img {
         width: 200px;
       }
-    }
-  }
-
-  // Footer
-  footer {
-    ul {
-      flex-direction: column;
-      align-items: start;
     }
   }
 }

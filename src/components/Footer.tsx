@@ -1,6 +1,10 @@
+import useScrollToSection from "../hook/useScrollToSection";
 import Socials from "./Socials";
 
 export default function Footer() {
+  const { BlogRef, AboutRef, ContactRef, RecipesRef, scrollToSection } =
+    useScrollToSection();
+
   return (
     <footer>
       <div>
@@ -10,19 +14,11 @@ export default function Footer() {
           </h6>
           <p>Lorem ipsum dolor sit amet, consectetuipisicing elit, </p>
         </div>
-        <ul>
-          <li>
-            <a href="">Recipes</a>
-          </li>
-          <li>
-            <a href="">Blog</a>
-          </li>
-          <li>
-            <a href="">Contact</a>
-          </li>
-          <li>
-            <a href="">About us</a>
-          </li>
+        <ul className="header_menu">
+          <li onClick={() => scrollToSection(RecipesRef)}>Recipes</li>
+          <li onClick={() => scrollToSection(BlogRef)}>Blog</li>
+          <li onClick={() => scrollToSection(ContactRef)}>Contact</li>
+          <li onClick={() => scrollToSection(AboutRef)}>About us</li>
         </ul>
       </div>
       <div className="copyright">

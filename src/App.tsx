@@ -12,6 +12,7 @@ import "./styles/style.scss";
 
 export default function App() {
   const { HomeRef } = useScrollToSection();
+
   return (
     <div ref={HomeRef}>
       <Header />
