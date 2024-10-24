@@ -209,7 +209,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="hero_image">
-          <img loading="lazy" src="/hero/hero.jfif" alt="Hero" />
+          <img loading="lazy" src="/hero/hero.png" alt="Hero" />
         </div>
       </div>
     </div>
