@@ -1,4 +1,8 @@
+import useScrollToSection from "../hook/useScrollToSection";
+
 export default function Inbox() {
+  const { ContactRef } = useScrollToSection();
+
   return (
     <div ref={ContactRef} className="inbox">
       <div className="inbox_header">

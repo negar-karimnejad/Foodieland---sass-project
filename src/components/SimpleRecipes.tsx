@@ -1,4 +1,5 @@
 import { GoHeartFill } from "react-icons/go";
+import useScrollToSection from "../hook/useScrollToSection";
 
 const simpleRecipes = [
   {
@@ -49,6 +50,8 @@ const simpleRecipes = [
 ];
 
 export default function SimpleRecipes() {
+  const { RecipesRef } = useScrollToSection();
+
   return (
     <div ref={RecipesRef} className="simple_recipes">
       <h2>Simple and tasty recipes</h2>
