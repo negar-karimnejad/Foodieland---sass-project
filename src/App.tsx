@@ -67,12 +67,10 @@ export default function App() {
   };
 
   const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
-    if (ref && ref.current) {
-      ref.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+    ref.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
 
   return (

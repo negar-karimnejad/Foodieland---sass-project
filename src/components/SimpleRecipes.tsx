@@ -1,4 +1,4 @@
-import { Ref } from "react";
+import React, { Ref } from "react";
 import { GoHeartFill } from "react-icons/go";
 
 const simpleRecipes = [
@@ -49,7 +49,7 @@ const simpleRecipes = [
   },
 ];
 
-export default function SimpleRecipes({ ref }: { ref: Ref<HTMLDivElement> }) {
+const SimpleRecipes = React.forwardRef((_props, ref: Ref<HTMLDivElement>) => {
   return (
     <div ref={ref} className="simple_recipes">
       <h2>Simple and tasty recipes</h2>
@@ -122,4 +122,6 @@ export default function SimpleRecipes({ ref }: { ref: Ref<HTMLDivElement> }) {
       </div>
     </div>
   );
-}
+});
+
+export default SimpleRecipes;

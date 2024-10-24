@@ -1,6 +1,6 @@
-import { Ref } from "react";
+import React, { Ref } from "react";
 
-export default function Inbox({ ref }: { ref: Ref<HTMLDivElement> }) {
+const Inbox = React.forwardRef((_props, ref: Ref<HTMLDivElement>) => {
   return (
     <div ref={ref} className="inbox">
       <div className="inbox_header">
@@ -25,4 +25,5 @@ export default function Inbox({ ref }: { ref: Ref<HTMLDivElement> }) {
       </div>
     </div>
   );
-}
+});
+export default Inbox;

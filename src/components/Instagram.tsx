@@ -1,4 +1,4 @@
-import { Ref } from "react";
+import React, { Ref } from "react";
 import { GoDotFill } from "react-icons/go";
 
 const posts = [
@@ -24,7 +24,7 @@ const posts = [
   },
 ];
 
-export default function Instagram({ ref }: { ref: Ref<HTMLDivElement> }) {
+const Instagram = React.forwardRef((_props, ref: Ref<HTMLDivElement>) => {
   return (
     <div ref={ref} className="instagram">
       <div className="instagram_header">
@@ -152,4 +152,6 @@ export default function Instagram({ ref }: { ref: Ref<HTMLDivElement> }) {
       </div>
     </div>
   );
-}
+});
+
+export default Instagram;
