@@ -6,6 +6,8 @@
 I appreciate your support in advance. ❤</p>
 
 <img src="public/readme.png"/>
+<img src="public/Screenshot (204).png"/>
+<img src="public/Screenshot (205).png"/>
 
 ### <p align="center">🔧Technologies:</p>
 <div align="center" >
