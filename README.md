@@ -16,10 +16,10 @@ I appreciate your support in advance. ❤</p>
 ### <p align="center">🔧Technologies:</p>
 <div align="center" >
   
-![npm](https://img.shields.io/badge/npm-c8f5ff?style=for-the-badge&logo=npm&logoColor=white)
-![react](https://img.shields.io/badge/react-c8f5ff?style=for-the-badge&logo=react&logoColor=white)
-![typescript](https://img.shields.io/badge/typescript-c8f5ff?style=for-the-badge&logo=typescript&logoColor=white)
-![sass](https://img.shields.io/badge/sass-c8f5ff?style=for-the-badge&logo=sass&logoColor=white)
+![npm](https://img.shields.io/badge/npm-c8f5ff?style=for-the-badge&logo=npm&logoColor=black)
+![react](https://img.shields.io/badge/react-c8f5ff?style=for-the-badge&logo=react&logoColor=black)
+![typescript](https://img.shields.io/badge/typescript-c8f5ff?style=for-the-badge&logo=typescript&logoColor=black)
+![sass](https://img.shields.io/badge/sass-c8f5ff?style=for-the-badge&logo=sass&logoColor=black)
   
 </div>
 
