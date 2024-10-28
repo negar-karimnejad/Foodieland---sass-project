@@ -6,7 +6,7 @@
 I appreciate your support in advance. ❤</p>
 
 <img src="public/readme.png"/>
-<section width="100%" display="flex" align="start" gap="2rem">
+<section width="100%" display="flex" align="start" justify="start" gap="2rem">
   <img src="public/Screenshot (206).png" width="410"/>
   <img src="public/Screenshot (207).png" width="410"/>
 </section>
