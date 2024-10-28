@@ -10,10 +10,10 @@ I appreciate your support in advance. ❤</p>
 ### <p align="center">🔧Technologies:</p>
 <div align="center" >
   
-![npm](https://img.shields.io/badge/npm-e7f9fd?style=for-the-badge&logo=npm&logoColor=white)
-![react](https://img.shields.io/badge/react-eb5e28?style=for-the-badge&logo=react&logoColor=white)
-![typescript](https://img.shields.io/badge/typescript-eb5e28?style=for-the-badge&logo=typescript&logoColor=white)
-![sass](https://img.shields.io/badge/sass-eb5e28?style=for-the-badge&logo=sass&logoColor=white)
+![npm](https://img.shields.io/badge/npm-90ebff?style=for-the-badge&logo=npm&logoColor=white)
+![react](https://img.shields.io/badge/react-90ebff?style=for-the-badge&logo=react&logoColor=white)
+![typescript](https://img.shields.io/badge/typescript-90ebff?style=for-the-badge&logo=typescript&logoColor=white)
+![sass](https://img.shields.io/badge/sass-90ebff?style=for-the-badge&logo=sass&logoColor=white)
   
 </div>
 
