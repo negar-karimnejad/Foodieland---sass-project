@@ -1,6 +1,6 @@
 
 
-# <p align="center" color="#eb5e28">Foodieland span color="#ff4500">.</span></p>
+# <p align="center" color="#eb5e28">Foodieland.</p>
 
 <p align="center">To support me, give star⭐ to this repository please.
 I appreciate your support in advance. ❤</p>
@@ -10,10 +10,10 @@ I appreciate your support in advance. ❤</p>
 ### <p align="center">🔧Technologies:</p>
 <div align="center" >
   
-![npm](https://img.shields.io/badge/npm-00d1ff?style=for-the-badge&logo=npm&logoColor=white)
-![react](https://img.shields.io/badge/react-00d1ff?style=for-the-badge&logo=react&logoColor=white)
-![typescript](https://img.shields.io/badge/typescript-00d1ff?style=for-the-badge&logo=typescript&logoColor=white)
-![sass](https://img.shields.io/badge/sass-00d1ff?style=for-the-badge&logo=sass&logoColor=white)
+![npm](https://img.shields.io/badge/npm-008faf?style=for-the-badge&logo=npm&logoColor=white)
+![react](https://img.shields.io/badge/react-008faf?style=for-the-badge&logo=react&logoColor=white)
+![typescript](https://img.shields.io/badge/typescript-008faf?style=for-the-badge&logo=typescript&logoColor=white)
+![sass](https://img.shields.io/badge/sass-008faf?style=for-the-badge&logo=sass&logoColor=white)
   
 </div>
 
