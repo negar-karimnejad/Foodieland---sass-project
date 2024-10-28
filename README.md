@@ -10,7 +10,7 @@ I appreciate your support in advance. ❤</p>
 ### <p align="center">🔧Technologies:</p>
 <div align="center" >
   
-![npm](https://img.shields.io/badge/npm-eb5e28?style=for-the-badge&logo=npm&logoColor=white)
+![npm](https://img.shields.io/badge/npm-e7f9fd?style=for-the-badge&logo=npm&logoColor=white)
 ![react](https://img.shields.io/badge/react-eb5e28?style=for-the-badge&logo=react&logoColor=white)
 ![typescript](https://img.shields.io/badge/typescript-eb5e28?style=for-the-badge&logo=typescript&logoColor=white)
 ![sass](https://img.shields.io/badge/sass-eb5e28?style=for-the-badge&logo=sass&logoColor=white)
@@ -19,5 +19,5 @@ I appreciate your support in advance. ❤</p>
 
 <p align="center">--------------------------------------------------------------</p>
   
-<p align="center">You can visit and explore in the <a href="https://foodieland-sass-project.vercel.app/" target="_blank">Foodieland.</a>.</p>
+<p align="center">You can visit and explore in the <a href="https://foodieland-sass-project.vercel.app/" target="_blank">Foodieland.</a></p>
 <p align="center">📌Please Use VPN to see the site.</p>
